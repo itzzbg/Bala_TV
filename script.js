@@ -1,25 +1,17 @@
-/* ==========================================================================
-   BALA TV HD — Interactions & Animations
-   ========================================================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---------- Page Loader ---------- */
   const loader = document.getElementById('loader');
   window.addEventListener('load', () => {
     setTimeout(() => loader.classList.add('hidden'), 900);
   });
 
-  /* ---------- Footer year ---------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Navbar scroll state + progress bar ---------- */
   const navbar = document.getElementById('navbar');
   const progressBar = document.getElementById('progressBar');
   const backToTop = document.getElementById('backToTop');
 
-  /* ---------- Mobile hamburger menu ---------- */
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
 
@@ -37,7 +29,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Active nav link on scroll ---------- */
   const sections = document.querySelectorAll('section[id]');
   const navAnchors = document.querySelectorAll('.nav-link');
 
@@ -54,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Navbar scroll state + progress bar ---------- */
   function onScroll() {
     const scrollY = window.scrollY;
     navbar.classList.toggle('scrolled', scrollY > 40);
@@ -73,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /* ---------- Hero particles ---------- */
   const particleContainer = document.getElementById('particles');
   if (particleContainer) {
     const count = window.innerWidth < 640 ? 18 : 36;
@@ -89,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  /* ---------- Scroll reveal (IntersectionObserver) ---------- */
   const revealTargets = document.querySelectorAll('.about-media, .about-content, .contact-info, .contact-form, .service-card, .coverage-card, .price-card, .counter-card');
   revealTargets.forEach(el => {
     if (el.classList.contains('about-media')) el.setAttribute('data-animate', 'left');
@@ -109,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
 
-  /* ---------- Animated counters ---------- */
   const counterEls = document.querySelectorAll('.counter-num[data-target]');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -134,7 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   counterEls.forEach(el => counterObserver.observe(el));
 
-  /* ---------- Gallery filter ---------- */
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -151,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Lightbox ---------- */
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
@@ -174,7 +159,6 @@ document.addEventListener('DOMContentLoaded', () => {
   lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
 
-  /* ---------- FAQ accordion ---------- */
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
@@ -191,7 +175,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Contact form validation ---------- */
   const contactForm = document.getElementById('contactForm');
   const formSuccess = document.getElementById('formSuccess');
 
@@ -223,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------- Ripple buttons ---------- */
   document.querySelectorAll('.ripple').forEach(btn => {
     btn.addEventListener('click', function (e) {
       const rect = this.getBoundingClientRect();
