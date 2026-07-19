@@ -1,3 +1,7 @@
+/* ==========================================================================
+   BALA TV HD — Premium Broadcast Media Website
+   ========================================================================== */
+
 :root{
   --bg:#080808;
   --bg-soft:#0d0d0d;
@@ -43,6 +47,7 @@ input,textarea,select{ font-family:inherit; }
 
 ::selection{ background:var(--gold); color:#080808; }
 
+/* Focus visibility for accessibility */
 a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible{
   outline:2px solid var(--gold);
   outline-offset:3px;
@@ -83,6 +88,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .section-sub.center{ margin-left:auto; margin-right:auto; text-align:center; }
 
+/* ============ Buttons ============ */
 .btn{
   position:relative;
   display:inline-flex;
@@ -121,6 +127,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @keyframes rippleAnim{ to{ transform:scale(3); opacity:0; } }
 
+/* ============ Loader ============ */
 .loader{
   position:fixed; inset:0; z-index:9999;
   background:#080808;
@@ -146,12 +153,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @keyframes loadFill{ to{ width:100%; } }
 
+/* ============ Progress bar ============ */
 .progress-bar{
   position:fixed; top:0; left:0; height:3px; width:0%;
   background:linear-gradient(90deg, var(--gold-2), var(--gold));
   z-index:1001; transition:width .1s linear;
 }
 
+/* ============ Navbar ============ */
 .navbar{
   position:fixed; top:0; left:0; right:0; z-index:900;
   padding:20px 0;
@@ -198,6 +207,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hamburger.open span:nth-child(2){ opacity:0; }
 .hamburger.open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
+/* ============ Hero ============ */
 .hero{
   position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center;
   overflow:hidden; text-align:center;
@@ -277,6 +287,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 @keyframes scrollWheel{ 0%{ transform:translateY(0); opacity:1; } 100%{ transform:translateY(12px); opacity:0; } }
 
+/* ============ Scroll reveal (JS controlled) ============ */
 [data-animate]{
   opacity:0; transform:translateY(40px); transition:opacity .8s var(--ease), transform .8s var(--ease);
 }
@@ -286,6 +297,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 [data-animate="right"]{ transform:translateX(50px); }
 [data-animate="right"].in-view{ transform:translateX(0); }
 
+/* ============ About ============ */
 .about{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .about-grid{
   display:grid; grid-template-columns:0.9fr 1.1fr; gap:70px; align-items:center;
@@ -310,6 +322,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .pillar h3{ font-family:var(--font-display); font-size:1.1rem; color:var(--gold); margin:0 0 8px; }
 .pillar p{ color:var(--grey); margin:0; font-size:0.94rem; }
 
+/* ============ Counters ============ */
 .counters{ background:var(--bg); }
 .counters-grid{
   padding-top:70px; padding-bottom:70px;
@@ -327,6 +340,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .counter-label{ color:var(--grey); font-size:0.85rem; letter-spacing:0.05em; text-transform:uppercase; }
 
+/* ============ Services ============ */
 .services{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
 .service-card{
@@ -345,6 +359,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .service-card h3{ font-family:var(--font-display); font-size:1.2rem; margin:0 0 10px; color:var(--white); }
 .service-card p{ color:var(--grey); font-size:0.92rem; margin:0; position:relative; z-index:1; }
 
+/* ============ Coverage ============ */
 .coverage{ background:var(--bg); }
 .coverage-grid{
   display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;
@@ -359,6 +374,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .coverage-card:hover{ transform:translateY(-6px) scale(1.02); border-color:var(--gold); color:var(--gold); }
 
+/* ============ Gallery ============ */
 .gallery{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .gallery-filters{ display:flex; gap:14px; justify-content:center; margin-bottom:44px; flex-wrap:wrap; }
 .filter-btn{
@@ -373,7 +389,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   break-inside:avoid; margin-bottom:20px; border-radius:var(--radius-md); overflow:hidden;
   cursor:pointer; position:relative;
 }
-.gallery-item img{ width:100%; transition:transform .6s var(--ease); }
+.gallery-item img{ width:100%; height:280px; object-fit:cover; display:block; transition:transform .6s var(--ease); }
 .gallery-item:hover img{ transform:scale(1.08); }
 .gallery-item.hide{ display:none; }
 
@@ -391,6 +407,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .lightbox-close:hover{ color:var(--gold); }
 
+/* ============ Pricing ============ */
 .pricing{ background:var(--bg); }
 .pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:28px; align-items:stretch; }
 .price-card{
@@ -420,6 +437,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .price-features li::before{ content:'✓ '; color:var(--gold); font-weight:700; }
 
+/* ============ Testimonials ============ */
 .testimonials{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); overflow:hidden; }
 .testimonial-track{
   display:flex; gap:26px; animation:testimonialSlide 26s linear infinite;
@@ -437,6 +455,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .author-role{ color:var(--gold-2); font-size:0.78rem; }
 @keyframes testimonialSlide{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
+/* ============ Clients ============ */
 .clients{ background:var(--bg); overflow:hidden; }
 .clients-track{ overflow:hidden; }
 .clients-slide{
@@ -449,6 +468,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .clients-slide span:hover{ color:var(--gold); }
 @keyframes clientsSlide{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
+/* ============ FAQ ============ */
 .faq{ background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
 .faq-inner{ max-width:840px; }
 .faq-item{ border-bottom:1px solid var(--line); }
@@ -466,6 +486,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .faq-answer p{ margin:0 0 20px; }
 .faq-item.open .faq-answer{ max-height:200px; }
 
+/* ============ Contact ============ */
 .contact{ background:var(--bg); }
 .contact-grid{ display:grid; grid-template-columns:1fr 1fr; gap:70px; }
 .contact-details{ margin:30px 0; display:flex; flex-direction:column; gap:20px; }
@@ -490,6 +511,12 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .form-row input:focus, .form-row select:focus, .form-row textarea:focus{ border-color:var(--gold); }
 .form-row textarea{ resize:vertical; }
+.form-row select{ cursor:pointer; }
+.form-row select option{
+  color:#111111;
+  background:#ffffff;
+}
+.form-row select option:disabled{ color:#777777; }
 .form-error{ display:none; color:#ff8080; font-size:0.76rem; }
 .form-row.invalid input, .form-row.invalid select, .form-row.invalid textarea{ border-color:#ff8080; }
 .form-row.invalid .form-error{ display:block; }
@@ -498,6 +525,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 .form-success.show{ display:block; }
 
+/* ============ Footer ============ */
 .footer{ background:var(--bg-soft); border-top:1px solid var(--line); padding-top:20px; }
 .footer-grid{
   display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:40px; padding-top:70px; padding-bottom:50px;
@@ -519,6 +547,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   color:var(--grey-dim); font-size:0.8rem;
 }
 
+/* ============ Floating Components ============ */
 .float-whatsapp{
   position:fixed; bottom:26px; right:26px; z-index:800;
   width:58px; height:58px; border-radius:50%; background:#25D366;
@@ -539,6 +568,9 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .back-to-top.show{ opacity:1; visibility:visible; transform:translateY(0); }
 .back-to-top:hover{ background:var(--gold); color:#0a0a0a; border-color:var(--gold); }
 
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
 @media (max-width:1024px){
   .about-grid{ grid-template-columns:1fr; }
   .about-image-frame img{ height:400px; }
@@ -577,6 +609,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .hero-actions .btn{ width:100%; }
 }
 
+/* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important; }
 }
